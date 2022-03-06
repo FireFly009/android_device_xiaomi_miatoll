@@ -13,12 +13,16 @@
 # limitations under the License.
 
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
-$(call inherit-product, vendor/aosp/common.mk)
+$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+DERP_BUILDTYPE := ci
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_INCLUDE_PIXEL_CHARGER := true
 
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
+USE_LEGACY_BOOTANIMATION := true
 
-PRODUCT_NAME := aosp_miatoll
+PRODUCT_NAME := derp_miatoll
 PRODUCT_DEVICE := miatoll
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := SM6250
@@ -27,11 +31,7 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
 
-# Set this flag in build script
-ifeq ($(CURRENT_BUILD_TYPE), gapps)
-# Use Gapps
-TARGET_SHIPS_SEPERATE_GAPPS_BUILD := true
-WITH_GAPPS := true
+# GMS
 TARGET_GAPPS_ARCH := arm64
+WITH_GMS := true
 IS_PHONE := true
-endif
