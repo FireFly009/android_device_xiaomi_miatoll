@@ -14,7 +14,7 @@
 
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 $(call inherit-product, vendor/derp/config/common_full_phone.mk)
-DERP_BUILDTYPE := ci
+DERP_BUILDTYPE := Official
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_INCLUDE_PIXEL_CHARGER := true
 
