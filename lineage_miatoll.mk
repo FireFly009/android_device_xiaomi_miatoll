@@ -13,16 +13,24 @@
 # limitations under the License.
 
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
-$(call inherit-product, vendor/derp/config/common_full_phone.mk)
-DERP_BUILDTYPE := Official
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/gms/products/gms.mk)
+
+# riceDroid Stuffs.
+RICE_MAINTAINER := FireFly09
+TARGET_GAPPS_ARCH := arm64
+TARGET_FACE_UNLOCK_SUPPORTED := true
+WITH_GAPPS := true
+USE_GAPPS := true
+WITH_GMS := true
+IS_PHONE := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_INCLUDE_PIXEL_CHARGER := true
 
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
-USE_LEGACY_BOOTANIMATION := true
 
-PRODUCT_NAME := derp_miatoll
+PRODUCT_NAME := lineage_miatoll
 PRODUCT_DEVICE := miatoll
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := SM6250
@@ -30,8 +38,3 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
-
-# GMS
-TARGET_GAPPS_ARCH := arm64
-WITH_GMS := true
-IS_PHONE := true
