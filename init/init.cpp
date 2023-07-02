@@ -48,6 +48,8 @@ void set_ro_build_prop(const std::string &source, const std::string &prop,
     }
 
     property_override(prop_name.c_str(), value.c_str(), false);
+
+    property_override("ro.product.mod_device", "joyeuse_global");
 }
 
 void set_device_props(const std::string brand, const std::string device, const std::string model) {
